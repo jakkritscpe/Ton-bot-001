@@ -8,6 +8,10 @@ app = Flask(__name__)
 
 API_HOST = 'https://api.bitkub.com'
 
+@app.route('/')
+def hello():
+    return 'hello world ton',200
+
 def getPriceCrypto(sym):
     res = requests.get(API_HOST + '/api/market/ticker')
     result = res.json()
